@@ -19,6 +19,7 @@ const typeDefs = gql`
   type Query {
     getUsers: [Users]!
     loginUser(username: String!, password: String!): Users!
+    getMessages(from: String!): [Message]!
   }
 
   type Mutation {
@@ -28,6 +29,7 @@ const typeDefs = gql`
       password: String!
       confirmPassword: String!
     ): Users!
+    sendMessage(to: String!, content: String!): Message!
   }
 `;
 
